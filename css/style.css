@@ -141,10 +141,39 @@ body{
   height: 350px;
 }
 
-/* GRID-PAINTINGS */
-.paintings_body{
-display: grid;
+/* GRIDS */
+.paintings_grid{
+  display: grid;
+  margin: 60px auto 0px;
+  width: 1040px;
+  column-gap: 12px;
+  grid-template-columns: repeat(4 , 164px) 333px;
+  grid-template-rows: 340px;
+}
+.lessons_grid{
+  display: grid;
+  margin: 60px auto 0px;
+  width: 1040px;
+  column-gap: 12px;
+  grid-template-columns: repeat(4 , 164px) 333px;
+  grid-template-rows: 340px;
+}
+.design_grid{
+  display: grid;
+  margin: 60px auto 0px;
+  width: 1040px;
+  column-gap: 12px;
+  grid-template-columns: repeat(4 , 164px) 333px;
+  grid-template-rows: 340px;
+}
+h2{
+font-size: 24px;
+text-align: center;
 
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-grid-template-rows: 340px;
+height:  164px;
+}
+/* FOOTER */
+.line{
+  border-top: 5px solid #DDC7A1;
+  box-shadow: 0px 2px 4px rgba(242, 227, 201, 0.65);
 }
