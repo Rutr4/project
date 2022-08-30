@@ -1,0 +1,150 @@
+/* Обнуление CSS */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+/*------------------------------*/
+
+A {
+  color: #000000; /* Цвет обычной ссылки */
+}
+A:visited {
+  color: #000000; /* Цвет посещенной ссылки */
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+/* HEADER */
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  max-width: 1040px;
+  margin: 0% auto;
+}
+.logo a{
+  display: flex;
+  justify-content:space-around;
+}
+.logo p {
+  /*?КАК ПО-ДРУГОМУ________________________________*/
+  line-height: 320px;
+
+  font-weight: 400;
+  font-size: 80px;
+}
+
+/* NAVIGATION */
+.menu {
+  max-width: 1040px;
+  height: 65px;
+  margin: 0px auto;
+}
+.menu ul{
+  display: flex;
+}
+.menu li {
+  text-align: center;
+  line-height: 65px;
+  width: 208px;
+
+  font-weight: 400;
+  font-size: 25px;
+}
+.vl{
+  display: inline-block;
+  border-left: 2px solid black;
+  height: 65px;
+}
+
+/* MAIN PHOTO */
+.img_wrap{
+  margin: 0% auto;
+  margin-top: 25px;
+  width: 1040px;
+  height: 350px;
+}
+
+/* GRID-PAINTINGS */
+.paintings_body{
+display: grid;
+
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows: 340px;
+}
