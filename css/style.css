@@ -101,7 +101,6 @@ body{
 }
 /* HEADER */
 .header {
-  grid-area: "header";
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -109,7 +108,6 @@ body{
   margin: 0% auto;
 }
 .main{
- grid-area: "main";
   margin-top: 25px;
 }
 .logo a{
@@ -148,7 +146,10 @@ body{
 }
 
 /* MAIN PHOTO */
-.img_wrap{
+.main_img{
+  border-radius: 5px;
+}
+.main_img_wrap{
   margin: 0% auto;
   width: 1040px;
   height: 350px;
@@ -163,38 +164,39 @@ body{
   grid-template-columns: repeat(4 , 164px) 333px;
   grid-template-rows: 340px;
 }
-.paintings_item{
-  position: relative;
-  padding: 0px 0px 85%;
+.img_border{
+  border: 1px solid black;
 }
 .lessons_grid{
   display: grid;
   margin: 60px auto 0px;
   width: 1040px;
-  column-gap: 12px;
-  grid-template-columns: repeat(4 , 164px) 333px;
-  grid-template-rows: 340px;
+  column-gap: 10px;
+  row-gap: 6px;
+  grid-template-columns: 164px 420px 250px 155px;
+  grid-template-rows: 170px 170px;
+}
+.lesson_item_big{
+  grid-row: span 2;
 }
 .design_grid{
   display: grid;
   margin: 60px auto 0px;
   width: 1040px;
   column-gap: 12px;
-  grid-template-columns: repeat(4 , 164px) 333px;
+  grid-template-columns: 164px 400px 340px;
   grid-template-rows: 340px;
 }
 h2{
 font-size: 24px;
 text-align: center;
-
-height:  164px;
+font-weight: 400;
 }
 .button{
   background-color: #F5EEE0;
   display: block;
   font-size: 18px;
-  font-weight: 100;
-  margin: 25px auto 40px;
+  margin: 40px auto 40px;
   width: 200px;
   height: 50px;
   border-radius: 40px;
