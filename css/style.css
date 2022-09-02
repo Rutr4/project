@@ -117,9 +117,7 @@ body {
   justify-content: space-around;
 }
 .logo p {
-  /*?КАК ПО-ДРУГОМУ________________________________*/
   line-height: 320px;
-
   font-weight: 400;
   font-size: 80px;
 }
@@ -140,6 +138,15 @@ body {
 
   font-weight: 400;
   font-size: 25px;
+}
+.menu li:hover{
+  box-shadow: 2px 2px 1px 1px purple;
+}
+.menu a:hover{
+  color: purple;
+}
+.menu a:active{
+  color: #F2E3C9A6;
 }
 .vl {
   display: inline-block;
