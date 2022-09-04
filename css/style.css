@@ -401,3 +401,36 @@ h2 {
 .btn:hover {
   background-color: rgba(255, 255, 255, 0.12);
 }
+
+.publication {
+  width: 60%;
+  margin: 5% auto;
+}
+.publication h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.publication p {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+.publication p::first-letter {
+  margin-left: 2.5rem;
+}
+.publication img_wrap {
+  position: relative;
+  width: 1040px;
+  height: 1000px;
+}
+.publication img {
+  margin-left: 50%;
+  margin-top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  margin: 5% 50%;
+}
+.publication_date {
+  display: block;
+  text-align: right;
+  font-size: small;
+}
