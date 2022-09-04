@@ -99,6 +99,10 @@ A:visited {
 body {
   font-family: "Montserrat", sans-serif;
 }
+.main {
+  grid-area: "main";
+  margin-top: 25px;
+}
 /* HEADER */
 .header {
   grid-area: "header";
@@ -108,10 +112,6 @@ body {
   max-width: 1040px;
   margin: 0% auto;
 }
-.main {
-  grid-area: "main";
-  margin-top: 25px;
-}
 .logo a {
   display: flex;
   justify-content: space-around;
@@ -120,6 +120,9 @@ body {
   line-height: 320px;
   font-weight: 400;
   font-size: 80px;
+}
+.logo a:hover {
+  color: purple;
 }
 
 /* NAVIGATION */
@@ -139,14 +142,14 @@ body {
   font-weight: 400;
   font-size: 25px;
 }
-.menu li:hover{
+.menu li:hover {
   box-shadow: 2px 2px 1px purple;
 }
-.menu a:hover{
+.menu a:hover {
   color: purple;
 }
-.menu a:active{
-  color: #F2E3C9A6;
+.menu a:active {
+  color: #f2e3c9a6;
 }
 .vl {
   display: inline-block;
@@ -163,23 +166,23 @@ body {
   width: 1040px;
   height: 350px;
 }
-.section-text{
+.section-text {
   position: relative;
   padding-top: 55%;
 }
-.section-text h2{
+.section-text h2 {
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.section-text hr{
+.section-text hr {
   margin-bottom: 150px;
-  box-shadow: 0px 2px 4px 1px #F2E3C9A6;
+  box-shadow: 0px 2px 4px 1px #f2e3c9a6;
 }
 
-/* GRIDS */
+/* INDEX_GRIDS */
 .paintings_grid {
   display: grid;
   margin: 60px auto 0px;
@@ -217,7 +220,7 @@ h2 {
   font-weight: 400;
 }
 .button {
-  background-color: #f5eee0;
+  background-color: #dbc7a39d;
   display: block;
   font-size: 18px;
   margin: 40px auto 40px;
@@ -225,7 +228,7 @@ h2 {
   height: 50px;
   border-radius: 40px;
 }
-.button:hover{
+.button:hover {
   box-shadow: 2px 2px 1px black;
   color: purple;
 }
@@ -236,6 +239,7 @@ h2 {
 }
 .footer {
   grid-area: "footer";
+  margin-top: 20px;
 }
 .footer p {
   font-size: 24px;
@@ -248,10 +252,11 @@ h2 {
   display: grid;
   column-gap: 15px;
   margin-top: 5px;
+  margin-bottom: 5px;
   justify-content: center;
 
   grid-template-columns: 250px 1100px;
-  grid-template-rows: 30px;
+  grid-template-rows: 100%;
 }
 .about_me span {
   margin-top: 20px;
@@ -287,7 +292,7 @@ h2 {
   background-color: #dbc7a39d;
 }
 .contact_input:focus {
-background-color: #ddc7a1;
+  background-color: #ddc7a1;
 }
 .grid_item_big {
   grid-column: span 2;
@@ -300,46 +305,99 @@ background-color: #ddc7a1;
   justify-self: center;
   background-color: #d8b880;
 }
-.contact_submit:hover{
+.contact_submit:hover {
   box-shadow: 2px 2px 1px black;
-  color: #F2E3C9A6;
+  color: #f2e3c9a6;
 }
 .contact_submit:focus {
   background-color: #ddc7a1;
-  }
-.contact_submit:active{
+}
+.contact_submit:active {
   color: purple;
 }
-.resize_none{
-resize: none; /* Запрещаем изменять размер */
+.resize_none {
+  resize: none; /* Запрещаем изменять размер */
 }
 
-/*AFFAIRS*/
-/* ! rename */
-.cards_grid{
-display: grid;
-width: 1040px;
-margin: 40px auto;
-row-gap: 50px;
-column-gap: 50px;
-grid-template-columns: 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr;
+/*!AFFAIRS*/
+.cards_wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
 }
-.card{
-  border: 1px solid black;
-  border-radius: 15px;
-  height: 350px;
-
+.cards {
   display: flex;
-  align-items: stretch;
-  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.card p{
-  flex: 1 1 200px;
-  padding:10px;
-}
-.card img{
+.cards img {
+  height: auto;
   max-width: 100%;
-  flex: 1 1 200px;
-  margin:0px auto;
+  vertical-align: middle;
+}
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: #dbc7a39d;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #ddc7a1 5%, purple 150%);
+}
+
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 14px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
 }
