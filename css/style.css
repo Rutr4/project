@@ -402,13 +402,22 @@ h2 {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
+/* PUBLICATION*/
 .publication {
-  width: 60%;
+  display: grid;
+  width: 1100px;
   margin: 5% auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 150px 1fr 1fr 150px;
+}
+.publication img{
+  margin: 10px;
 }
 .publication h1 {
+  grid-column: 1/4;
   font-size: 2.5rem;
   text-align: center;
+  align-self: center;
 }
 .publication p {
   margin: 1rem;
@@ -417,20 +426,9 @@ h2 {
 .publication p::first-letter {
   margin-left: 2.5rem;
 }
-.publication img_wrap {
-  position: relative;
-  width: 1040px;
-  height: 1000px;
-}
-.publication img {
-  margin-left: 50%;
-  margin-top: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  margin: 5% 50%;
-}
-.publication_date {
-  display: block;
+.publication_footer {
+  grid-row: 4/5;
+  grid-column: 1/4;
   text-align: right;
   font-size: small;
 }
