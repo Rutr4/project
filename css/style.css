@@ -110,14 +110,19 @@ body {
   flex-wrap: nowrap;
   flex-direction: column;
   max-width: 1040px;
+  height: 100%;
   margin: 0% auto;
+}
+.logo img {
+  width: 100%;
+  height: auto;
 }
 .logo a {
   display: flex;
   justify-content: space-around;
 }
 .logo p {
-  line-height: 320px;
+  align-self: center;
   font-weight: 400;
   font-size: 80px;
 }
@@ -127,14 +132,17 @@ body {
 
 /* NAVIGATION */
 .menu {
-  max-width: 1040px;
-  height: 65px;
+  max-width: 100%;
+  height: 100%;
   margin: 0px auto;
 }
 .menu ul {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .menu li {
+  border: 1px groove purple;
   text-align: center;
   line-height: 65px;
   width: 208px;
@@ -142,6 +150,40 @@ body {
   font-weight: 400;
   font-size: 25px;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    width: 100%;
+  }
+  .logo img {
+    width: 280px;
+  }
+  .logo p {
+    font-size: 85px;
+  }
+  .menu li {
+    line-height: 70px;
+    font-size: 28px;
+    width: 300px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+  }
+  .logo img {
+    width: 280px;
+  }
+  .logo p {
+    font-size: 85px;
+  }
+  .menu li {
+    line-height: 70px;
+    font-size: 35px;
+    width: 50%;
+  }
+}
+
 .menu li:hover {
   box-shadow: 2px 2px 1px purple;
 }
@@ -151,73 +193,161 @@ body {
 .menu a:active {
   color: #f2e3c9a6;
 }
-.vl {
-  display: inline-block;
-  border-left: 2px solid black;
-  height: 65px;
-}
 
 /* MAIN PHOTO */
-.main_img {
-  border-radius: 5px;
-}
 .main_img_wrap {
   margin: 0% auto;
   width: 1040px;
-  height: 350px;
 }
+.main_img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main_img_wrap {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .main_img_wrap {
+    width: 100%;
+  }
+}
+/* TEXT-BLOCK */
 .section-text {
-  position: relative;
-  padding-top: 55%;
+  width: 180px;
+  /* (340[высота блока]-26[шрифт]-120[margin]-10[высота линий])/2 = 92px[должен быть отступ]  */
+  padding-top: 92px;
 }
 .section-text h2 {
   display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 60px 0px 60px 0px;
+  text-align: center;
+  align-self: center;
+  font-size: 26px;
+  font-weight: 400;
 }
 .section-text hr {
-  margin-bottom: 150px;
+  grid-area: S;
   box-shadow: 0px 2px 4px 1px #f2e3c9a6;
+}
+.img_border {
+  border: 1px solid black;
 }
 
 /* INDEX_GRIDS */
+.item-a {
+  grid-area: A;
+}
+.item-b {
+  grid-area: B;
+}
+.item-c {
+  grid-area: C;
+}
+.item-d {
+  grid-area: D;
+}
+
 .paintings_grid {
   display: grid;
   margin: 60px auto 0px;
   width: 1040px;
-  column-gap: 12px;
-  grid-template-columns: repeat(4, 164px) 333px;
+  column-gap: 8px;
+  grid-template-columns: 180px repeat(3, 164px) 336px;
   grid-template-rows: 340px;
-}
-.img_border {
-  border: 1px solid black;
+  grid-template-areas: "S A B C D";
 }
 .lessons_grid {
   display: grid;
   margin: 60px auto 0px;
   width: 1040px;
-  column-gap: 10px;
   row-gap: 6px;
-  grid-template-columns: 164px 420px 250px 155px;
-  grid-template-rows: 170px 170px;
-}
-.lesson_item_big {
-  grid-row: span 2;
+  column-gap: 2px;
+  grid-template-columns: 164px 250px 420px 180px;
+  grid-template-rows: 167px 167px;
+  grid-template-areas:
+    "A C D S"
+    "B C D S";
 }
 .design_grid {
   display: grid;
   margin: 60px auto 0px;
   width: 1040px;
-  column-gap: 12px;
-  grid-template-columns: 164px 400px 340px;
+  column-gap: 60px;
+  grid-template-columns: 180px 400px 340px;
   grid-template-rows: 340px;
+  grid-template-areas: "S A B";
 }
-h2 {
-  font-size: 24px;
-  text-align: center;
-  font-weight: 400;
+@media screen and (max-width: 1023px) {
+  .section-text {
+    width: 1040px;
+    /* (70[высота блока]-26[шрифт]-20[margin]-10[высота линий])/2 = 7px[должен быть отступ]  */
+    padding-top: 7px;
+  }
+  .section-text h2 {
+    margin: 10px 0px 10px 0px;
+    font-size: 26px;
+  }
+  .paintings_grid {
+    background: red;
+    grid-template-columns: repeat(3, 164px) 336px;
+    grid-template-rows: 70px 340px;
+    justify-content: space-between;
+    grid-template-areas:
+      "S S S S"
+      "A B C D";
+  }
+  .lessons_grid {
+    background: red;
+    grid-template-columns: 164px 250px 420px;
+    grid-template-rows: 70px 170px 170px;
+    column-gap: 103px;
+    grid-template-areas:
+      "S S S"
+      "A C D"
+      "B C D";
+  }
+  .design_grid {
+    background: red;
+    grid-template-columns: 400px 340px;
+    grid-template-rows: 70px 340px;
+    justify-content: space-between;
+    grid-template-areas:
+      "S S"
+      "A B";
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .paintings_grid {
+    background: yellow;
+    grid-template-columns: repeat(3, 164px);
+    grid-template-rows: 70px repeat(2, 340px);
+    grid-template-areas:
+      "S S S"
+      "A B C"
+      "D D D";
+  }
+  .lessons_grid {
+    background: yellow;
+    grid-template-columns: 250px 420px;
+    grid-template-rows: 70px 167px 340px;
+    grid-template-areas:
+      "S S"
+      "A B"
+      "C D";
+  }
+  .design_grid {
+    background: yellow;
+    grid-template-columns: 400px;
+    grid-template-rows: 70px 340px 340px;
+    grid-template-areas:
+      "S"
+      "A"
+      "B";
+  }
 }
 .button {
   background-color: #dbc7a39d;
@@ -380,7 +510,7 @@ h2 {
   color: #ffffff;
   font-size: 0.875rem;
   line-height: 1.5;
-  margin-top: .25rem;
+  margin-top: 0.25rem;
   margin-bottom: 1.25rem;
   font-weight: 400;
 }
@@ -410,7 +540,7 @@ h2 {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
-.publication img{
+.publication img {
   margin: 10px;
 }
 .publication h1 {
@@ -432,20 +562,20 @@ h2 {
   grid-column: 1/4;
   text-align: right;
 }
-.column_1_3{
+.column_1_3 {
   grid-column: 1/3;
 }
-.column_2_4{
+.column_2_4 {
   grid-column: 2/4;
 }
-.align_self_center{
+.align_self_center {
   align-self: center;
 }
 .justify_center {
   justify-self: center;
   text-align: center;
 }
-.master_class_ty{
+.master_class_ty {
   grid-column: 1/4;
   font-weight: 400;
   text-align: center;
