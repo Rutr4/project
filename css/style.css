@@ -449,7 +449,7 @@ body {
   resize: none; /* Запрещаем изменять размер */
 }
 
-/*!AFFAIRS*/
+/*AFFAIRS*/
 .cards_wrapper {
   max-width: 1040px;
   margin: 0 auto;
@@ -469,17 +469,17 @@ body {
 .cards_item {
   display: flex;
   padding: 1rem;
+  width: 33.3333%;
 }
 
-@media (min-width: 40rem) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .cards_item {
     width: 50%;
   }
 }
-
-@media (min-width: 56rem) {
+@media screen and (max-width: 767px) {
   .cards_item {
-    width: 33.3333%;
+    width: 100%;
   }
 }
 
