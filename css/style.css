@@ -294,15 +294,17 @@ body {
     background: red;
     grid-template-columns: repeat(3, 164px) 336px;
     grid-template-rows: 70px 340px;
-    justify-content: space-between;
+    row-gap: 10px;
     grid-template-areas:
       "S S S S"
       "A B C D";
   }
   .lessons_grid {
     background: red;
+    width: 100%;
     grid-template-columns: 164px 250px 420px;
     grid-template-rows: 70px 170px 170px;
+    row-gap: 10px;
     column-gap: 103px;
     grid-template-areas:
       "S S S"
@@ -311,9 +313,9 @@ body {
   }
   .design_grid {
     background: red;
-    grid-template-columns: 400px 340px;
+    grid-template-columns: repeat(2, 340px);
     grid-template-rows: 70px 340px;
-    justify-content: space-between;
+    row-gap: 10px;
     grid-template-areas:
       "S S"
       "A B";
@@ -341,8 +343,8 @@ body {
   }
   .design_grid {
     background: yellow;
-    grid-template-columns: 400px;
-    grid-template-rows: 70px 340px 340px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px repeat(2, 1fr);
     grid-template-areas:
       "S"
       "A"
