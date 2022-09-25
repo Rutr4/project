@@ -204,12 +204,7 @@ body {
   height: auto;
   border-radius: 5px;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .main_img_wrap {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .main_img_wrap {
     width: 100%;
   }
@@ -291,7 +286,6 @@ body {
     font-size: 26px;
   }
   .paintings_grid {
-    background: red;
     grid-template-columns: repeat(3, 164px) 336px;
     grid-template-rows: 70px 340px;
     justify-content: space-between;
@@ -300,7 +294,6 @@ body {
       "A B C D";
   }
   .lessons_grid {
-    background: red;
     grid-template-columns: 164px 250px 420px;
     grid-template-rows: 70px 170px 170px;
     column-gap: 103px;
@@ -310,7 +303,6 @@ body {
       "B C D";
   }
   .design_grid {
-    background: red;
     grid-template-columns: 400px 340px;
     grid-template-rows: 70px 340px;
     justify-content: space-between;
@@ -322,16 +314,14 @@ body {
 
 @media screen and (max-width: 767px) {
   .paintings_grid {
-    background: yellow;
     grid-template-columns: repeat(3, 164px);
     grid-template-rows: 70px repeat(2, 340px);
     grid-template-areas:
       "S S S"
       "A B C"
-      "D D D";
+      ". D .";
   }
   .lessons_grid {
-    background: yellow;
     grid-template-columns: 250px 420px;
     grid-template-rows: 70px 167px 340px;
     grid-template-areas:
@@ -340,7 +330,6 @@ body {
       "C D";
   }
   .design_grid {
-    background: yellow;
     grid-template-columns: 400px;
     grid-template-rows: 70px 340px 340px;
     grid-template-areas:
