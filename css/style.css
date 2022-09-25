@@ -288,7 +288,7 @@ body {
   .paintings_grid {
     grid-template-columns: repeat(3, 164px) 336px;
     grid-template-rows: 70px 340px;
-    justify-content: space-between;
+    row-gap: 10px;
     grid-template-areas:
       "S S S S"
       "A B C D";
