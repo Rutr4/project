@@ -22,6 +22,19 @@
   </head>
 
   <body>
+    <div id="preloader">
+      <img src="img/preloader.gif" alt="preloader" />
+    </div>
+    <script>
+      window.onload = function () {
+        let preloader = document.getElementById("preloader");
+        preloader.classList.add("hide-preloader");
+        setInterval(function () {
+          preloader.classList.add("preloader-hidden");
+        }, 990);
+      };
+    </script>
+
     <div class="wrapper">
       <header class="header">
         <div class="logo">
@@ -181,8 +194,6 @@
         <p>Developed & Designed by Muradyan Artur | z3530903 / 00302</p>
         <p><b>2022</b></p>
       </footer>
-
-      <script src="js/cript.js"></script>
     </div>
   </body>
 </html>

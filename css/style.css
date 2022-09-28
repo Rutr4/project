@@ -78,7 +78,35 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
-/*------------------------------*/
+/* Прелоадер */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+#preloader.hide-preloader {
+  animation: hidePreloader 1s;
+}
+
+#preloader.preloader-hidden {
+  display: none;
+}
+
+@keyframes hidePreloader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /* Основная grid сетка страницы */
 .wrapper {
   min-height: 100%;
@@ -103,6 +131,7 @@ body {
   grid-area: "main";
   margin-top: 25px;
 }
+
 /* HEADER */
 .header {
   grid-area: "header";
@@ -244,36 +273,44 @@ body {
 .item-d {
   grid-area: D;
 }
-
 .paintings_grid {
   display: grid;
   margin: 60px auto 0px;
-  width: 1040px;
-  column-gap: 8px;
-  grid-template-columns: 180px repeat(3, 164px) 336px;
-  grid-template-rows: 340px;
-  grid-template-areas: "S A B C D";
 }
 .lessons_grid {
   display: grid;
   margin: 60px auto 0px;
-  width: 1040px;
-  row-gap: 6px;
-  column-gap: 2px;
-  grid-template-columns: 164px 250px 420px 180px;
-  grid-template-rows: 167px 167px;
-  grid-template-areas:
-    "A C D S"
-    "B C D S";
 }
 .design_grid {
   display: grid;
   margin: 60px auto 0px;
-  width: 1040px;
-  column-gap: 60px;
-  grid-template-columns: 180px 400px 340px;
-  grid-template-rows: 340px;
-  grid-template-areas: "S A B";
+}
+
+@media screen and (min-width: 1024px) {
+  .paintings_grid {
+    width: 1040px;
+    column-gap: 8px;
+    grid-template-columns: 180px repeat(3, 164px) 336px;
+    grid-template-rows: 340px;
+    grid-template-areas: "S A B C D";
+  }
+  .lessons_grid {
+    width: 1040px;
+    row-gap: 6px;
+    column-gap: 2px;
+    grid-template-columns: 164px 250px 420px 180px;
+    grid-template-rows: 167px 167px;
+    grid-template-areas:
+      "A C D S"
+      "B C D S";
+  }
+  .design_grid {
+    width: 1040px;
+    column-gap: 60px;
+    grid-template-columns: 180px 400px 340px;
+    grid-template-rows: 340px;
+    grid-template-areas: "S A B";
+  }
 }
 @media screen and (max-width: 1023px) {
   .section-text {
@@ -313,24 +350,32 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+  .section-text {
+    width: 100%;
+    padding-top: 7px;
+  }
   .paintings_grid {
-    grid-template-columns: repeat(3, 164px);
-    grid-template-rows: 70px repeat(2, 340px);
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px repeat(4, 340px);
     grid-template-areas:
-      "S S S"
-      "A B C"
-      ". D .";
+      "S"
+      "A"
+      "B"
+      "C"
+      "D";
   }
   .lessons_grid {
-    grid-template-columns: 250px 420px;
-    grid-template-rows: 70px 167px 340px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px repeat(2, 155px) 400px 280px;
     grid-template-areas:
-      "S S"
-      "A B"
-      "C D";
+      "S"
+      "A"
+      "B"
+      "C"
+      "D";
   }
   .design_grid {
-    grid-template-columns: 400px;
+    grid-template-columns: 1fr;
     grid-template-rows: 70px 340px 340px;
     grid-template-areas:
       "S"
